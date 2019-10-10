@@ -22,7 +22,7 @@ namespace CustomListTests
             testList.Add(12);
             actual = testList[0];
 
-
+            
 
 
             //assert
@@ -44,6 +44,29 @@ namespace CustomListTests
            actual = testList.Count;
 
             // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void AddMultipleAndGetCertainIndex()
+
+        {
+            // arrange
+
+
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 12;
+            int actual;
+
+            //act
+            testList.Add(12);
+            testList.Add(14);
+            testList.Add(16);
+            actual = testList[0];
+
+
+
+
+            //assert
             Assert.AreEqual(expected, actual);
         }
     }
