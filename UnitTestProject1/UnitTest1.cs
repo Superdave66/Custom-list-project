@@ -90,11 +90,11 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void IncreaseMaxCapacitySizeCheckLastIndex()
+        public void IncreaseMaxCapacitySizeCheckIndex()
         {
             // arrange
             CustomList<int> testList = new CustomList<int>();
-            int expected = 5;
+            int expected = 3;
             int actual;
 
 
@@ -104,9 +104,161 @@ namespace CustomListTests
             testList.Add(3);
             testList.Add(4);
             testList.Add(5);
-            actual = testList[5];
+            actual = testList[2];
 
             // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Removeonefromlistmutipleadded()
+
+        {
+            // arrange
+
+
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 2;
+            int actual;
+
+            //act
+            testList.Add(1); 
+            testList.Add(2);
+            testList.Add(3);
+            testList.Remove(1);
+            actual = testList[0];
+
+
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void RemovesometingNotTherefromlistmutipleadded()
+
+        {
+            // arrange
+
+
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 2;
+            int actual;
+
+            //act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Remove(4);
+            actual = testList[1];
+
+
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void RemoveoeMultipleFromlistAddedOverMaxCapacityCheckCount()
+
+        {
+            // arrange
+
+
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 2;
+            int actual;
+
+            //act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Add(5);
+            testList.Remove(3);
+            testList.Remove(2);
+            testList.Remove(1);
+            actual = testList.Count;
+
+
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+        public void RemoveoeMultipleFromlistAddedOverMaxCapacityCheckCapacity()
+
+        {
+            // arrange
+
+
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 8;
+            int actual;
+
+            //act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Add(5);
+            testList.Remove(3);
+            testList.Remove(2);
+            testList.Remove(1);
+            actual = testList.Capacity;
+
+
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void RemovesometingAddSomethingelsefromlistmutipleadded()
+
+        {
+            // arrange
+
+
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 4;
+            int actual;
+
+            //act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Remove(2);
+            testList.Add(4);
+            actual = testList[2];
+
+
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Removesometingcheckcapacity()
+
+        {
+            // arrange
+
+
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 4;
+            int actual;
+
+            //act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Remove(2);
+            actual = testList.Capacity;
+
+
+
+
+            //assert
             Assert.AreEqual(expected, actual);
         }
     }
