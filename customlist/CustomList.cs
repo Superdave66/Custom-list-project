@@ -94,6 +94,13 @@ namespace CustomListTests
                 break;
             }
         }
+        public override string toString()
+        {
+            return String.Format( Count);
+
+          
+
+        }
     }
-}
+}4
 

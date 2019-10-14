@@ -70,7 +70,7 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void IncreaseMaxCapacitySize()
+        public void IncreaseMaxCapacitySizecheckcount()
         {
             // arrange
             CustomList<int> testList = new CustomList<int>();
@@ -261,5 +261,11 @@ namespace CustomListTests
             //assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void TestToString()
+        {
+            CustomList items = new items 
+        }
+
     }
 }
